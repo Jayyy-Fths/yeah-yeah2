@@ -92,25 +92,53 @@
     </header>
 
     <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="recipes.html">Recipes</a>
-        <a href="traditions.html">Traditions</a>
-        <a href="contact.html">Contact</a>
+        <a href="#about">About</a>
+        <a href="#recipes">Recipes</a>
+        <a href="#traditions">Traditions</a>
+        <a href="#contact">Contact</a>
     </nav>
 
     <div class="main-content">
-        <section id="placeholder">
-            <h2>Welcome to Our Thanksgiving Celebration!</h2>
-            <p>Use the navigation links above to explore more about Thanksgiving traditions, recipes, and stories.</p>
+        <section id="about">
+            <h2>About Thanksgiving</h2>
+            <p>Thanksgiving is a time to gather with loved ones, share delicious meals, and reflect on all we are grateful for. It's a celebration of togetherness and tradition.</p>
+            <button id="thankfulButton">What Are You Thankful For?</button>
+            <p id="thankfulMessage" style="display: none;"></p>
         </section>
-    </div>
 
-    <footer>
-        <p>&copy; 2024 Thanksgiving Celebration</p>
-        <div class="footer-links">
-            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
-        </div>
-    </footer>
+        <section id="recipes">
+            <h2>Favorite Recipes</h2>
+            <div class="recipe">
+                <h3>Classic Roast Turkey</h3>
+                <p>A Thanksgiving staple, perfectly roasted to golden perfection.</p>
+            </div>
+            <div class="recipe">
+                <h3>Pumpkin Pie</h3>
+                <p>End your feast with this creamy and spiced classic dessert.</p>
+            </div>
+        </section>
+
+        <section id="traditions">
+            <h2>Thanksgiving Traditions</h2>
+            <p>From watching parades to playing football, Thanksgiving traditions bring us closer together. What are your favorite traditions?</p>
+        </section>
+
+        
+    
+
+    <script>
+        document.getElementById('thankfulButton').addEventListener('click', function() {
+            const messages = [
+                'I am thankful for family and friends!',
+                'I am thankful for good health!',
+                'I am thankful for all the delicious food!',
+                'I am thankful for moments of joy and laughter!'
+            ];
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            const messageElement = document.getElementById('thankfulMessage');
+            messageElement.textContent = randomMessage;
+            messageElement.style.display = 'block';
+        });
+    </script>
 </body>
 </html>
